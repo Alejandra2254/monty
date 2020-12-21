@@ -1,4 +1,9 @@
 #include "monty.h"
+/**
+ * pall - function that print the list
+ * @stack: stack given by main
+ * @line_number: number of line
+ */
 void pall(stack_t **stack, unsigned int line_number)
 {
 	size_t c = 0;

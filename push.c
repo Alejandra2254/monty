@@ -1,4 +1,9 @@
 #include "monty.h"
+/**
+ * push - function that push each node
+ * @stack: stack given by main
+ * @line_number: number of line
+ */
 void push(stack_t **stack, unsigned int line_number)
 {
 	int n = atoi(global.argument);
@@ -11,6 +16,12 @@ void push(stack_t **stack, unsigned int line_number)
 	if (!add_node(stack, atoi(global.argument)))
 		exit(EXIT_FAILURE);
 }
+/**
+ * add_node - function that add node
+ * @stack: stack given by main
+ * @n: data
+ * Return: number
+ */
 stack_t *add_node(stack_t **stack, const int n)
 {
 	stack_t *new;
@@ -28,7 +39,6 @@ stack_t *add_node(stack_t **stack, const int n)
 	new->prev = NULL;
 	if (*stack)
 		(*stack)->prev = new;
-	
 	*stack = new;
 
 	return (new);
