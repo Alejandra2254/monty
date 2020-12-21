@@ -6,15 +6,29 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-	int n = atoi(global.argument);
-
-	if (isdigit(n) != 0)
+	char *n = global.argument;
+	
+	if (is_digit(n) == 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (!add_node(stack, atoi(global.argument)))
 		exit(EXIT_FAILURE);
+}
+int is_digit(char *string)
+{
+	if (!string || *string == '\0')
+		return (0);
+	if (*string == '-')
+		string++;
+	while (*string)
+	{
+		if (isdigit(*string) == 0)
+			return (0);
+		string++;
+	}
+	return(1);
 }
 /**
  * add_node - function that add node
