@@ -7,7 +7,7 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	char *n = global.argument;
-	
+
 	if (is_digit(n) == 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
@@ -20,6 +20,11 @@ void push(stack_t **stack, unsigned int line_number)
 		return;
 	}
 }
+/**
+ * is_digit - Function that checks if is digit or not
+ * @string: string to verify
+ * Return: 1 if is digit 0 if not.
+ */
 int is_digit(char *string)
 {
 	if (!string || *string == '\0')
@@ -32,7 +37,7 @@ int is_digit(char *string)
 			return (0);
 		string++;
 	}
-	return(1);
+	return (1);
 }
 /**
  * add_node - function that add node
@@ -61,6 +66,10 @@ stack_t *add_node(stack_t **stack, const int n)
 
 	return (new);
 }
+/**
+ * free_stack - free linked list
+ * @stack: pointer head
+ */
 void free_stack(stack_t *stack)
 {
 	stack_t *current = stack;
@@ -69,7 +78,7 @@ void free_stack(stack_t *stack)
 	if (stack)
 	{
 		next = stack->next;
-		while(current)
+		while (current)
 		{
 			free(current);
 			current = next;
