@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 		if(!line || *line == '#')
 		{
 			con++;
-			contnue;
+			continue;
 		}
 		con++;
 		global.argument = strtok(NULL, " \t\n");
