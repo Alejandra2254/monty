@@ -48,6 +48,7 @@ int main(int argc, char **argv)
 	{
 		if (*buff == '\n')
 		{
+			con++;
 			continue;
 		}
 		line = strtok(buff, " \t\n");
