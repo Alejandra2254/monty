@@ -1,7 +1,8 @@
 #include "monty.h"
 /**
- *
- *
+ * pint - Function that print the top of the list
+ * @stack: stack given by main
+ * @line_number: number of line
  */
 void pint(stack_t **stack, unsigned int line_number)
 {
