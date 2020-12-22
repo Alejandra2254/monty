@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 			continue;
 		}
 		line = strtok(buff, " \t\n");
-		if(!line || *line == '#')
+		if (!line || *line == '#') /*cause is trated as a comment*/
 		{
 			con++;
 			continue;
