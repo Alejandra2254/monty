@@ -11,10 +11,14 @@ void push(stack_t **stack, unsigned int line_number)
 	if (is_digit(n) == 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
+		status = EXIT_FAILURE;
+		return;
 	}
 	if (!add_node(stack, atoi(global.argument)))
-		exit(EXIT_FAILURE);
+	{
+		status = EXIT_FAILURE;
+		return;
+	}
 }
 int is_digit(char *string)
 {
@@ -56,4 +60,21 @@ stack_t *add_node(stack_t **stack, const int n)
 	*stack = new;
 
 	return (new);
+}
+void free_stack(stack_t *stack)
+{
+	stack_t *current = stack;
+	stack_t *next;
+
+	if (stack)
+	{
+		next = stack->next;
+		while(current)
+		{
+			free(current);
+			current = next;
+			if (next)
+				next = next->next;
+		}
+	}
 }

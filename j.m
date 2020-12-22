@@ -1,4 +1,4 @@
-pssh 1
+push 1
 push 2
-push g
+push 3
 pall

@@ -1,5 +1,29 @@
 #include "monty.h"
 /**
+ * error_arguments - Error about number of arguments
+ */
+void error_arguments(void)
+{
+	write(2, "USAGE: monty file\n", 19);
+	exit(EXIT_FAILURE);
+}
+/**
+ * error_openfile - The file couldn't open
+ * @filename: name of the file
+ */
+void error_openfile(char *filename)
+{
+	int i = 0;
+
+	while (filename[i])
+		i++;
+	write(2, "Error: Can't open file ", 24);
+	write(2, filename, i);
+	write(2, "\n", 2);
+	exit(EXIT_FAILURE);
+}
+int status = 0;
+/**
  * main - Entry point
  * Monty Project written by Alejandra
  * @argc: number of arguments.
@@ -33,27 +57,6 @@ int main(int argc, char **argv)
 	}
 	free(buff);
 	fclose(file);
-}
-/**
- * error_arguments - Error about number of arguments
- */
-void error_arguments(void)
-{
-	write(2, "USAGE: monty file\n", 19);
-	exit(EXIT_FAILURE);
-}
-/**
- * error_openfile - The file couldn't open
- * @filename: name of the file
- */
-void error_openfile(char *filename)
-{
-	int i = 0;
-
-	while (filename[i])
-		i++;
-	write(2, "Error: Can't open file ", 24);
-	write(2, filename, i);
-	write(2, "\n", 2);
-	exit(EXIT_FAILURE);
+	free_stack(stack);
+	exit(status);
 }

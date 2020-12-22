@@ -24,5 +24,5 @@ void opcode(stack_t **stack, char *line, int con)
 		i++;
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n",con ,line);
-	exit(EXIT_FAILURE);
+	status = EXIT_FAILURE;
 }

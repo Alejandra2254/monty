@@ -46,6 +46,7 @@ typedef struct help
 help global;
 
 extern int status;
+
 void error_arguments(void);
 void error_openfile(char *filename);
 void opcode(stack_t **stack, char *line, int con);
@@ -53,4 +54,5 @@ void push(stack_t **stack, unsigned int line_number);
 int is_digit(char *string);
 void pall(stack_t **stack, unsigned int line_number);
 stack_t *add_node(stack_t **stack, const int n);
+void free_stack(stack_t *stack);
 #endif /* MONTY_H */
