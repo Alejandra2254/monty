@@ -13,6 +13,7 @@ void opcode(stack_t **stack, char *line, int con)
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
+		{"add", add},
 		{NULL, NULL}
 	};
 	int i = 0;
