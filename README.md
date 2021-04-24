@@ -1,5 +1,5 @@
 # what do i see
-what do i see is an application made for detection of common objects based on a given image, when detecting the elements the application will output the name of the element and the times number  it finds the element in the image.
+What do i see is an application made for detection of common objects based on a given image, when detecting the elements the application will output the name of the element and the times number  it finds the element in the image.
 
 ## How It Works
 
