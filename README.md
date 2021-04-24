@@ -11,10 +11,10 @@ The backend of the application uses the cvlib library, (as long as the openCV, t
 
 ## Technologies used
 
-python3.5
-pip
-OpenCV
-Tensorflow
+* python3.5
+* pip
+* OpenCV
+* Tensorflow
 
 ## Usage
 
